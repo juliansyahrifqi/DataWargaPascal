@@ -468,6 +468,37 @@ begin
      readln;
 end;
 
+procedure hapusData;
+var
+   i,y,d : integer;
+begin
+     tampilData;
+     if (length(datawarga[1].nik) <> 0) then
+     begin
+          write('Hapus NIK ke = '); readln(d);
+          y := wherey;
+          while (d <= 0) or ( d> banyakdata) do
+          begin
+               gotoxy (wherex,wherey-1); clreol;
+               gotoxy (1,y-1); clreol;
+               writeln('Hapus NIK ke = ',d);
+               write ('Pilih Nomer Data '); readln;
+               gotoxy(wherex,wherey-1); clreol;
+               gotoxy(21,y-1); clreol; readln(d);
+          end;
+          for i:=d to banyakdata do
+          begin
+               datawarga[d] := datawarga[d+1];
+          end;
+          banyakdata := banyakdata-1;
+     end
+     else
+     begin
+          write('Tidak Ada Data Untuk Dihapus');
+          readln;
+     end;
+end;
+
 
 var pilihan:integer;
 begin
@@ -481,17 +512,21 @@ repeat
      writeln('1. Tambah Data Warga');
      writeln('2. Edit Data Warga');
      writeln('3. Tampil Data Warga');
+     writeln('4. Hapus Data Warga ');
      writeln();
      writeln('-----------------------------');
      writeln();
      write('PILIHAN ANDA ? '); readln(pilihan);
-        if pilihan=1 then
+        if pilihan = 1 then
            tambahData
         else
-        if pilihan=2 then
+        if pilihan = 2 then
            editData
         else
-        if pilihan=3 then
+        if pilihan = 3 then
            tampilData
+        else
+        if pilihan = 4 then
+           hapusData
      until pilihan=0;
 end.
