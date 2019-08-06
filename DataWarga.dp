@@ -1,0 +1,15 @@
+[Project]
+FileName=C:\Users\PRATAMA\Documents\DataWargaPascal\DataWarga.dp
+Name=DataWarga
+MainUnit=C:\Users\PRATAMA\Documents\DataWargaPascal\UDataWarga.pas
+UnitCount=1
+ResFiles=C:\Users\PRATAMA\Documents\DataWargaPascal\rsrc.rc
+NoConsole=0
+IsDll=0
+Icon=C:\Dev-Pas\Icons\Edit.ico
+CompilerOptions=
+IncludeDirs=
+ObjFile=
+[Unit1]
+FileName=C:\Users\PRATAMA\Documents\DataWargaPascal\UDataWarga.pas
+FileTime=1325816640
