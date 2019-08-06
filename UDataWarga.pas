@@ -618,6 +618,289 @@ begin
      end;
 end;
 
+procedure pengurutan_nik_asc; //Selection Sort
+var
+   i,j   : integer;
+   imaks : integer;
+   temp  : warga;
+begin
+     for i:=banyakdata downto 2 do
+     begin
+          imaks:=1;
+          for j:=2 to i do
+               if datawarga[j].nik > datawarga[imaks].nik then
+                  imaks:=j;
+          if (imaks<>i) then
+          begin
+                    temp:=datawarga[i];
+                    datawarga[i]:=datawarga[imaks];
+                    datawarga[imaks]:=temp;
+          end;
+     end;
+     writeln();
+     writeln('Pengurutan data telah selesai. Silahkan tekan enter untuk melanjutkan');readln;
+end;
+
+procedure pengurutan_nik_dsc; //Selection Sort
+var
+   i,j   : integer;
+   imaks : integer;
+   temp  : warga;
+begin
+     for i:=banyakdata downto 2 do
+     begin
+          imaks:=1;
+          for j:=2 to i do
+               if datawarga[j].nik < datawarga[imaks].nik then
+                  imaks:=j;
+          if (imaks<>i) then
+          begin
+                    temp:=datawarga[i];
+                    datawarga[i]:=datawarga[imaks];
+                    datawarga[imaks]:=temp;
+          end;
+     end;
+     writeln();
+     writeln('Pengurutan data telah selesai. Silahkan tekan enter untuk melanjutkan');readln;
+end;
+
+procedure pengurutan_nik;
+var
+   pil : integer;
+begin
+     clrscr;
+     writeln('Menu Pengurutan NIK');
+     writeln('------------------------------------');
+     writeln('1. Pengurutan NIK Ascending');
+     writeln('2. Pengurutan NIK Descending');
+     writeln('------------------------------------');
+     write('Pilihan : ');readln(pil);
+     case pil of
+          1:pengurutan_nik_asc;
+          2:pengurutan_nik_dsc;
+     end;
+end;
+
+
+procedure pengurutan_nama_asc; //Selection Sort
+var
+   i,j   : integer;
+   imaks : integer;
+   temp  : warga;
+begin
+     for i:=banyakdata downto 2 do
+     begin
+          imaks:=1;
+          for j:=2 to i do
+               if datawarga[j].nama > datawarga[imaks].nama then
+                  imaks:=j;
+          if (imaks<>i) then
+          begin
+                    temp:=datawarga[i];
+                    datawarga[i]:=datawarga[imaks];
+                    datawarga[imaks]:=temp;
+          end;
+     end;
+     writeln();
+     writeln('Pengurutan data telah selesai. Silahkan tekan enter untuk melanjutkan');readln;
+end;
+
+procedure pengurutan_nama_dsc;
+var
+   i,j   : integer;
+   imaks : integer;
+   temp  : warga;
+begin
+     for i:=banyakdata downto 2 do
+     begin
+          imaks:=1;
+          for j:=2 to i do
+               if datawarga[j].nama < datawarga[imaks].nama then
+                  imaks:=j;
+          if (imaks<>i) then
+          begin
+                    temp:=datawarga[i];
+                    datawarga[i]:=datawarga[imaks];
+                    datawarga[imaks]:=temp;
+          end;
+     end;
+     writeln();
+     writeln('Pengurutan data telah selesai. Silahkan tekan enter untuk melanjutkan');readln;
+end;
+
+procedure pengurutan_nama;
+var
+   pil : integer;
+begin
+     clrscr;
+     writeln('Menu Pengurutan Nama');
+     writeln('------------------------------------');
+     writeln('1. Pengurutan Nama Ascending');
+     writeln('2. Pengurutan Nama Descending');
+     writeln('------------------------------------');
+     write('Pilihan : ');readln(pil);
+     case pil of
+          1:pengurutan_nama_asc;
+          2:pengurutan_nama_dsc;
+     end;
+end;
+
+procedure pengurutan_jkelamin; //Selection Sort
+var
+   i,j   : integer;
+   imaks : integer;
+   temp  : warga;
+begin
+     for i:=banyakdata downto 2 do
+     begin
+          imaks:=1;
+          for j:=2 to i do
+               if datawarga[j].jkelamin > datawarga[imaks].jkelamin then
+                  imaks:=j;
+          if (imaks<>i) then
+          begin
+                    temp:=datawarga[i];
+                    datawarga[i]:=datawarga[imaks];
+                    datawarga[imaks]:=temp;
+          end;
+     end;
+     writeln();
+     writeln('Pengurutan data telah selesai. Silahkan tekan enter untuk melanjutkan');
+end;
+
+procedure pengurutan_pend; //Selection Sort
+var
+   i,j   : integer;
+   imaks : integer;
+   temp  : warga;
+begin
+     for i:=banyakdata downto 2 do
+     begin
+          imaks:=1;
+          for j:=2 to i do
+               if datawarga[j].pend > datawarga[imaks].pend then
+                  imaks:=j;
+          if (imaks<>i) then
+          begin
+                    temp:=datawarga[i];
+                    datawarga[i]:=datawarga[imaks];
+                    datawarga[imaks]:=temp;
+          end;
+     end;
+     writeln();
+     writeln('Pengurutan data telah selesai. Silahkan tekan enter untuk melanjutkan');
+end;
+
+procedure pengurutan_stnikah; //Selection Sort
+var
+   i,j   : integer;
+   imaks : integer;
+   temp  : warga;
+begin
+     for i:=banyakdata downto 2 do
+     begin
+          imaks:=1;
+          for j:=2 to i do
+               if datawarga[j].stnikah > datawarga[imaks].stnikah then
+                  imaks:=j;
+          if (imaks<>i) then
+          begin
+                    temp:=datawarga[i];
+                    datawarga[i]:=datawarga[imaks];
+                    datawarga[imaks]:=temp;
+          end;
+     end;
+     writeln();
+     writeln('Pengurutan data telah selesai. Silahkan tekan enter untuk melanjutkan');
+end;
+
+procedure pengurutan_usia_asc; //Selection Sort
+var
+   i,j   : integer;
+   imaks : integer;
+   temp  : warga;
+begin
+     for i:=banyakdata downto 2 do
+     begin
+          imaks:=1;
+          for j:=2 to i do
+               if datawarga[j].usia > datawarga[imaks].usia then
+                  imaks:=j;
+          if (imaks<>i) then
+          begin
+                    temp:=datawarga[i];
+                    datawarga[i]:=datawarga[imaks];
+                    datawarga[imaks]:=temp;
+          end;
+     end;
+     writeln();
+     writeln('Pengurutan data telah selesai. Silahkan tekan enter untuk melanjutkan');
+end;
+
+procedure pengurutan_usia_dsc; //Selection Sort
+var
+   i,j   : integer;
+   imaks : integer;
+   temp  : warga;
+begin
+     for i:=banyakdata downto 2 do
+     begin
+          imaks:=1;
+          for j:=2 to i do
+               if datawarga[j].usia < datawarga[imaks].usia then
+                  imaks:=j;
+          if (imaks<>i) then
+          begin
+                    temp:=datawarga[i];
+                    datawarga[i]:=datawarga[imaks];
+                    datawarga[imaks]:=temp;
+          end;
+     end;
+     writeln();
+     writeln('Pengurutan data telah selesai. Silahkan tekan enter untuk melanjutkan');
+end;
+
+procedure pengurutan_usia;
+var
+   pil : integer;
+begin
+     clrscr;
+     writeln('Menu Pengurutan Usia');
+     writeln('------------------------------------');
+     writeln('1. Pengurutan Usia Ascending');
+     writeln('2. Pengurutan Usia Descending');
+     writeln('------------------------------------');
+     write('Pilihan : ');readln(pil);
+     case pil of
+          1 : pengurutan_usia_asc;
+          2 : pengurutan_usia_dsc;
+     end;
+end;
+
+procedure pengurutanData;
+var
+   pil : integer;
+begin
+     clrscr;
+     writeln('1. Pengurutan Berdasarkan NIK');
+     writeln('2. Pengurutan Berdasarkan Nama ');
+     writeln('3. Pengurutan Berdasarkan Jenis Kelamin');
+     writeln('4. Pengurutan Berdasarkan Pendidikan Terakhir ');
+     writeln('5. Pengurutan Berdasarkan Status Perkawinan');
+     writeln('6. Pengurutan berdasarkan Usia');
+     writeln('--------------------------------------');
+     write('Pilihan : '); readln(pil);
+     case pil of
+          1 : pengurutan_nik;
+          2 : pengurutan_nama;
+          3 : pengurutan_jkelamin;
+          4 : pengurutan_pend;
+          5 : pengurutan_stnikah;
+          6 : pengurutan_usia;
+     end;
+end;
+
+
 
 
 var pilihan:integer;
@@ -635,6 +918,8 @@ repeat
      writeln('4. Hapus Data Warga ');
      writeln('5. Simpan Data Warga ');
      writeln('6. Pencarian Data Warga');
+     writeln('7. Pengurutan Data Warga');
+     writeln('0. Keluar');
      writeln();
      writeln('-----------------------------');
      writeln();
@@ -656,5 +941,8 @@ repeat
         else
         if pilihan = 6 then
            pencarianData
+        else
+        if pilihan = 7 then
+           pengurutanData;
      until pilihan=0;
 end.
