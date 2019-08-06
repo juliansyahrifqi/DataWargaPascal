@@ -499,6 +499,21 @@ begin
      end;
 end;
 
+procedure simpanData;
+var
+   i : integer;
+   f : file of warga;
+begin
+     clrscr;
+     assign(f,'datawarga.dat');
+     rewrite(f);
+     for i:=1 to banyakdata do
+        write(f,datawarga[i]);
+     writeln (banyakdata,' data warga disimpan ke file. Tekan Enter untuk kembali ');
+     close(f);
+     readln;
+end;
+
 
 var pilihan:integer;
 begin
@@ -513,6 +528,7 @@ repeat
      writeln('2. Edit Data Warga');
      writeln('3. Tampil Data Warga');
      writeln('4. Hapus Data Warga ');
+     writeln('5. Simpan Data Warga ');
      writeln();
      writeln('-----------------------------');
      writeln();
@@ -528,5 +544,8 @@ repeat
         else
         if pilihan = 4 then
            hapusData
+        else
+        if pilihan = 5 then
+           simpanData
      until pilihan=0;
 end.
