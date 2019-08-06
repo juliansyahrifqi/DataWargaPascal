@@ -538,6 +538,87 @@ begin
    end;
 end;
 
+procedure pencarian_nik;
+var
+   dicari:string;
+   i:integer;
+begin
+     clrscr;
+     write('NIK yang dicari : ');readln(dicari);
+     i:=1;
+     while (datawarga[i].nik<>dicari)and(i<banyakdata) do
+           i:=i+1;
+     if datawarga[i].nik=dicari then
+     begin
+          writeln();
+          writeln('Data dengan NIK ',dicari,' ditemukan di posisi ke-',i);
+          writeln('---------------------------------------------');
+          writeln();
+          writeln('Nama                  : ',datawarga[i].nama);
+          writeln('Jenis Kelamin         : ',datawarga[i].jkelamin);
+          writeln('Tempat, Tanggal Lahir : ',datawarga[i].tpl);
+          writeln('Agama                 : ',datawarga[i].agama);
+          writeln('Pendidikan Terakhir   : ',datawarga[i].pend);
+          writeln('Status Perkawinan     : ',datawarga[i].stnikah,' Menikah ');
+          writeln('Usia / Umur           : ',datawarga[i].usia,' Tahun ');
+          writeln();
+          writeln('----------------------------------------------');
+     end
+     else
+         writeln('Data tidak ditemukan');
+     readln;
+end;
+
+procedure pencarian_nama;
+var
+   dicari:string;
+   i:integer;
+begin
+     clrscr;
+     write('NAMA yang dicari : ');readln(dicari);
+     i := 1;
+     while (upcase(datawarga[i].nama)<>upcase(dicari))and(i<banyakdata) do
+           i:=i+1;
+     if upcase(datawarga[i].nama)=upcase(dicari) then
+     begin
+          writeln();
+          writeln('Data dengan NAMA ',dicari,' ditemukan di posisi ke-',i);
+          writeln('------------------------------------------------------');
+          writeln();
+          writeln('Nama                  : ',datawarga[i].nama);
+          writeln('NIK                   : ',datawarga[i].nik);
+          writeln('Jenis Kelamin         : ',datawarga[i].jkelamin);
+          writeln('Tempat, Tanggal Lahir : ',datawarga[i].tpl);
+          writeln('Agama                 : ',datawarga[i].agama);
+          writeln('Pendidikan Terakhir   : ',datawarga[i].pend);
+          writeln('Status Perkawinan     : ',datawarga[i].stnikah,' Menikah ');
+          writeln('Usia / Umur           : ',datawarga[i].usia,' Tahun ');
+          writeln();
+          writeln('------------------------------------------------------');
+     end
+     else
+         writeln('Data tidak ditemukan');
+     readln;
+end;
+
+procedure pencarianData;
+var
+   pil : integer;
+begin
+     clrscr;
+     writeln('Menu Pencarian Data');
+     writeln('------------------------------------');
+     writeln('1. Pencarian berdasarkan NIK');
+     writeln('2. Pencarian berdasarkan NAMA');
+     writeln('------------------------------------');
+     write('Pilihan : ');readln(pil);
+     case pil of
+          1 : pencarian_nik;
+          2 : pencarian_nama;
+     end;
+end;
+
+
 
 var pilihan:integer;
 begin
@@ -553,6 +634,7 @@ repeat
      writeln('3. Tampil Data Warga');
      writeln('4. Hapus Data Warga ');
      writeln('5. Simpan Data Warga ');
+     writeln('6. Pencarian Data Warga');
      writeln();
      writeln('-----------------------------');
      writeln();
@@ -571,5 +653,8 @@ repeat
         else
         if pilihan = 5 then
            simpanData
+        else
+        if pilihan = 6 then
+           pencarianData
      until pilihan=0;
 end.
