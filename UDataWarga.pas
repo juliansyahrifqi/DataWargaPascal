@@ -6,19 +6,20 @@ const
 
 type
     warga=record
-          nik      :string;
-          nama     :string;
-          jkelamin :string;
-          tpl      :string;
-          agama    :string;
-          pend     :string;
-          stnikah  :string;
-          usia     :integer;
+          nik      : string;
+          nama     : string;
+          jkelamin : string;
+          tpl      : string;
+          agama    : string;
+          pend     : string;
+          stnikah  : string;
+          usia     : integer;
     end; //End record
 
 var
    datawarga  : array[1..maks] of warga;
    banyakdata : integer;
+
 
 procedure tambahData;
 begin
@@ -43,6 +44,8 @@ begin
           writeln('Data Sudah Maksimum. Silahkan Tekan Enter Untuk Lanjut ! ');
      end;
 end;
+
+// Awal procedure edit
 
 procedure edit_nik;
 var
@@ -442,6 +445,8 @@ begin
      end;
 end;
 
+//Akhir procedure edit
+
 procedure tampilData;
 var
   i:integer;
@@ -538,6 +543,9 @@ begin
    end;
 end;
 
+
+//Awal procedure pencarian
+
 procedure pencarian_nik;
 var
    dicari:string;
@@ -617,6 +625,11 @@ begin
           2 : pencarian_nama;
      end;
 end;
+
+//Akhir procedure pencarian
+
+
+//Awal procedure pengurutan
 
 procedure pengurutan_nik_asc; //Selection Sort
 var
@@ -900,10 +913,11 @@ begin
      end;
 end;
 
+// Akhir procedure pengurutan
 
 
-
-var pilihan:integer;
+var
+   pilihan:integer;
 begin
      banyakdata:=0;
      bacadarifile;
