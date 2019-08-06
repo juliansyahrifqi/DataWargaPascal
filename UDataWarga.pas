@@ -417,7 +417,7 @@ var
             close(f);
         end;
 
-procedure edit;
+procedure editData;
 var
 pil:integer;
 begin
@@ -442,6 +442,32 @@ begin
      end;
 end;
 
+procedure tampilData;
+var
+  i:integer;
+begin
+     clrscr;
+     writeln('====================================================================================================================================================================');
+     writeln('                                                                               DATA WARGA                                                                                    ');
+     writeln('====================================================================================================================================================================');
+     writeln('        NIK       |       Nama       |    Jenis Kelamin    |      Tempat, Tanggal Lahir      |     Agama     |     Pendidikan     |     Status     |     Usia     | ');
+     writeln('--------------------------------------------------------------------------------------------------------------------------------------------------------------------');
+     for i:=1 to banyakdata do
+     begin
+         writeln(datawarga[i].nik:17,'   ',datawarga[i].nama:15,'   ',datawarga[i].jkelamin:11,'   ','   ',datawarga[i].tpl:34,'   ',
+                 datawarga[i].agama:13,'   ',datawarga[i].pend:14,'   ',datawarga[i].stnikah:17,'   ',datawarga[i].usia:11);
+     end;
+     writeln('--------------------------------------------------------------------------------------------------------------------------------------------------------------------');
+     writeln();
+     writeln();
+     writeln();
+     textcolor(lightred);
+     writeln('Disarankan agar menggunakan layout CMD dengan Screen Buffer Size ukuran 300 x 300 agar terlihat lebih rapi dan maksimal ');
+     writeln('Dan menggunakan Window Size dengan width 165 dan dengan height 40 ');
+     writeln('Terima Kasih');
+     readln;
+end;
+
 
 var pilihan:integer;
 begin
@@ -454,6 +480,8 @@ repeat
      writeln();
      writeln('1. Tambah Data Warga');
      writeln('2. Edit Data Warga');
+     writeln('3. Tampil Data Warga');
+     writeln();
      writeln('-----------------------------');
      writeln();
      write('PILIHAN ANDA ? '); readln(pilihan);
@@ -461,7 +489,9 @@ repeat
            tambahData
         else
         if pilihan=2 then
-           edit
+           editData
         else
+        if pilihan=3 then
+           tampilData
      until pilihan=0;
 end.
