@@ -514,11 +514,35 @@ begin
      readln;
 end;
 
+procedure bacadarifile;
+var
+   f : file of warga;
+begin
+   if fileexists ('datawarga.dat') then
+   begin
+     assign(f,'datawarga.dat');
+     reset(f);
+
+     while not eof(f) do
+     begin
+          banyakdata:=banyakdata+1;
+          read(f,datawarga[banyakdata]);
+     end;
+     close(f);
+     writeln('Baca data warga dari file. Terbaca ',banyakdata,' record');
+     readln;
+   end
+   else
+   begin
+        writeln('File belum ada. Silahkan membuat file terlebih dahulu. ');readln;
+   end;
+end;
+
 
 var pilihan:integer;
 begin
      banyakdata:=0;
-
+     bacadarifile;
 repeat
      clrscr;
      textcolor(white);
